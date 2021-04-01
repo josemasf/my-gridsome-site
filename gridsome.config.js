@@ -6,5 +6,17 @@
 
 module.exports = {
   siteName: 'Gridsome + netlify CMS',
-  plugins: []
+  plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'articles/**/*.md',        
+        typeName: 'Articles',
+        remark: {}
+      }
+    },
+  ],
+  transformers: {
+    remark: {}
+  }
 }
